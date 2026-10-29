@@ -1,0 +1,44 @@
+# STKShop by STK SMP
+# Regular shop purchases use Vault (the same money economy used by EssentialsX).
+# Buy prices are calculated from the sell-price list using the multiplier below.
+regular-shop:
+  buy-multiplier: 2.5
+  # Price is sell-price * multiplier. Rounds to 2 decimal places.
+  items-per-page: 28
+  allow-technical-items: false
+
+shard-shop:
+  # Requires DonutShard/DonutShards API with getBalance(Player), take(Player,long), give(Player,long,String).
+  # If the plugin API cannot be detected, shard purchases fail safely instead of charging/duplicating.
+  common-key: 400
+  uncommon-key: 800
+  rare-key: 1600
+  legendary-key: 2400
+  vip: 2500
+  battlepass: 4000
+  diamond-3x3-pickaxe: 5000
+  netherite-3x3-pickaxe: 10000
+  diamond-kit: 15000
+  netherite-kit: 25000
+
+commands:
+  common-key: 'crate key {player} common 1'
+  uncommon-key: 'crate key {player} uncommon 1'
+  rare-key: 'crate key {player} rare 1'
+  legendary-key: 'crate key {player} legendary 1'
+  vip: 'lp user {player} parent set vip'
+  battlepass: 'ppa g {player}'
+  diamond-3x3-pickaxe: 'pickaxe3x3 diamond {player}'
+  netherite-3x3-pickaxe: 'pickaxe3x3 netherite {player}'
+
+messages:
+  prefix: '&8[&bSTKShop&8] &r'
+  no-permission: '&cYou do not have permission.'
+  no-money: '&cYou do not have enough money.'
+  no-shards: '&cYou do not have enough Shards.'
+  no-economy: '&cVault economy is not available.'
+  no-shard-api: '&cDonutShard API was not detected. Purchase cancelled; no Shards were taken.'
+  purchased: '&aPurchase complete!'
+  cancelled: '&cPurchase cancelled.'
+  inventory-full: '&cMake room in your inventory first.'
+  reload: '&aSTKShop configuration reloaded.'

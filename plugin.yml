@@ -1,0 +1,18 @@
+name: STKShop
+version: 1.0.0
+main: net.stksmp.shop.STKShop
+api-version: '1.21'
+author: STK SMP
+softdepend: [Vault, DonutShard, DonutShards, PlaceholderAPI, LuckPerms, PassPlus, CratesPlus]
+commands:
+  shop:
+    description: Open the STK SMP shop
+    usage: /shop
+    aliases: [buy]
+  stkshop:
+    description: STKShop administration
+    usage: /stkshop reload
+permissions:
+  stkshop.admin:
+    description: Manage STKShop
+    default: op
